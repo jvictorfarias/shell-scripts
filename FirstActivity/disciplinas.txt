@@ -23,7 +23,6 @@ Tópicos Avançados em Redes de Computadores
 Segurança da Informação
 Serviços de Redes
 Projeto de Pesquisa Científica e Tecnológica
-Laboratório em Infra-estrutura de Redes
 Projeto Integrado em Redes de Computadores
 Gestão de Tecnologia da Informação e Comunicação			
 Análise de Desempenho de Redes

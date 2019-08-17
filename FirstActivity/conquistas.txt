@@ -1,0 +1,14 @@
+Informática e Organização de Computadores			
+Fundamentos de Programação
+Teoria Geral da Administração			
+Matemática Computacional			
+Métodos e Técnicas de Pesquisa
+Redes de Computadores			
+Programação Orientada a Objetos
+Sistemas Operacionais			
+Empreendedorismo			
+Probabilidade e Estatística
+Internet e Arquitetura TCP/IP
+Administração de Sistemas Operacionais Windows
+Administração de Sistemas Operacionais Linux
+Fundamentos de Banco de Dados
