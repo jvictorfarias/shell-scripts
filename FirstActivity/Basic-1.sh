@@ -14,7 +14,10 @@ while read line; do
     mkdir ./ufc_quixada/redes_de_computadores/professores/"$line"
 done < professores_formatted.txt
 
+
 cat conquistas.txt | tr "/" " " | tr " " "_" | tr '[:upper:]' '[:lower:]' > conquistas_formatted.txt;
 while read line; do
     mkdir ./ufc_quixada/redes_de_computadores/conquistas/"$line"
+    ln -s -t ~/Documents/Scripts/FirstActivity/ufc_quixada/redes_de_computadores/conquistas/"$line" ~/Documents/Scripts/FirstActivity/ufc_quixada/redes_de_computadores/grade_curricular/"$line"
+    mv ~/Documents/Scripts/FirstActivity/ufc_quixada/redes_de_computadores/conquistas/"$line"/"$line" ~/Documents/Scripts/FirstActivity/ufc_quixada/redes_de_computadores/conquistas/"$line"/programa
 done < conquistas_formatted.txt
