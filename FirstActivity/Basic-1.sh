@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir -p ./ufc_quixada/redes_de_computadores/professores;
 mkdir -p ufc_quixada/redes_de_computadores/grade_curricular;
