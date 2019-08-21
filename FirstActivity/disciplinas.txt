@@ -17,7 +17,7 @@ Redes de Comunicação Móveis
 Laboratório em Infra-estrutura de Redes
 Programação de Scripts
 Sistemas Distribuídos
-Ética, Direito e Legislação
+Etica Direito e Legislação
 Gerência de Redes
 Tópicos Avançados em Redes de Computadores
 Segurança da Informação

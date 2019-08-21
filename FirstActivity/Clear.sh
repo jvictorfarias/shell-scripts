@@ -4,3 +4,4 @@ rm -rf ufc_quixada
 rm conquistas_formatted.txt
 rm professores_formatted.txt
 rm disciplinas_formatted.txt
+rm ufc_quixada.tar.gz
