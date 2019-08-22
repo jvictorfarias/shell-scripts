@@ -40,5 +40,5 @@ ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'cd ~/atividades/atividade02/; 
 
 # Alteração da permissão
 
-ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'chmod 444 ~/atividades/atividade02/ufc_quixada/redes_de_computadores/grade_curricular';
-ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'chmod 444 ~/atividades/atividade02/ufc_quixada/redes_de_computadores/professores';
+ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'chmod 555 ~/atividades/atividade02/ufc_quixada/redes_de_computadores/grade_curricular';
+ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'chmod 555 ~/atividades/atividade02/ufc_quixada/redes_de_computadores/professores';
