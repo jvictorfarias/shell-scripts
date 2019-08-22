@@ -1,9 +1,12 @@
-#!/bin/bash
+#!/bin/sh
 
 # Vars
 var=1;
-pathing=$PWD;
+# Caminho da chave de permissão e nome do usuário
+key="~/Documents/Scripts/Permission/joaovictor.pem";
+user="joaovictor";
 
+# Criação dos diretórios
 cat disciplinas.txt | tr "/" " " | tr " " "_" | tr '[:upper:]' '[:lower:]' > disciplinas_formatted.txt;
 while read line; do
     mkdir -p ./ufc_quixada/redes_de_computadores/grade_curricular/"$line"
@@ -15,17 +18,22 @@ while read line; do
 done < professores_formatted.txt
 
 
+# Criação dos links simbólicos e diretórios de conquistas
 cat conquistas.txt | tr "/" " " | tr " " "_" | tr '[:upper:]' '[:lower:]' > conquistas_formatted.txt;
 while read line; do
     mkdir -p ./ufc_quixada/redes_de_computadores/conquistas/"$line";
-    cd $pathing/ufc_quixada/redes_de_computadores/conquistas/"$line";
-    ln -s $pathing/ufc_quixada/redes_de_computadores/grade_curricular/"$line" "$line";
-    cd -;
     links=$(head -n $var professores_links.txt | tail -n -1 | cat);
-    cd $pathing/ufc_quixada/redes_de_computadores/conquistas/"$line"
-    ln -s $pathing/ufc_quixada/redes_de_computadores/professores/"$links"/ "$links";
+    cd ufc_quixada/redes_de_computadores/conquistas/"$line";
+    ln -s ../../grade_curricular/"$line" "$line";
+    ln -s ../../professores/"$links"/ "$links";
     cd -;
     var=$((var+1))
 done < conquistas_formatted.txt
 
-tar -czvf ufc_quixada.tar.gz ufc_quixada
+# Compressão
+tar -czvf ufc_quixada.tar.gz ufc_quixada;
+
+# Envio para o servidor
+ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'mkdir -p ~/atividades/atividade02';
+scp -i $key ufc_quixada.tar.gz $user@scripts.joao.marcelo.nom.br:~/atividades/atividade02;
+ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'cd ~/atividades/atividade02/; tar -xzvf ufc_quixada.tar.gz; rm -rf ufc_quixada.tar.gz';
