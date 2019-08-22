@@ -37,3 +37,8 @@ tar -czvf ufc_quixada.tar.gz ufc_quixada;
 ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'mkdir -p ~/atividades/atividade02';
 scp -i $key ufc_quixada.tar.gz $user@scripts.joao.marcelo.nom.br:~/atividades/atividade02;
 ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'cd ~/atividades/atividade02/; tar -xzvf ufc_quixada.tar.gz; rm -rf ufc_quixada.tar.gz';
+
+# Alteração da permissão
+
+ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'chmod 444 ~/atividades/atividade02/ufc_quixada/redes_de_computadores/grade_curricular';
+ssh -t -i $key $user@scripts.joao.marcelo.nom.br 'chmod 444 ~/atividades/atividade02/ufc_quixada/redes_de_computadores/professores';
