@@ -1,4 +1,4 @@
 grep -E -n '[[:space:]]{1}[.]'
 grep -E -n '[.]+[A-Za-z]'
 grep -E -n '[.][[:space:]]*[a-z]'
-grep -E -n '[^[:punct:]]$'
+grep -E -n '[^[:punct:][:space:]]$'

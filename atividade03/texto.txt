@@ -345,7 +345,7 @@ Data de Fim:
 Descrição/Justificativa: O campus da UFC em Quixadá e seus seis cursos voltados para a área da Tecnologia da Informação (TI) tem um potencial enorme em revelar talentos que podem ir bem em futuras competições de programação. Entretanto, apesar de bons resultados como, por exemplo, o terceiro lugar de uma equipe do campus na fase regional de 2017 da maratona de programação, o campus ainda não atingiu o objetivo de conseguir que uma equipe chegue até a fase nacional. Além disso, a organização da Meia Maratona de Programação, um evento preparatório do campus, acaba atualmente sobrecarregando os responsáveis pelo Grupo de Estudo para a Maratona de Programação (GEMP), o que dificulta sua divulgação e faz com que poucas equipes participem. Outro evento importante nesse âmbito e que poderia ser mais divulgado no campus para os alunos do primeiro ano de graduação é a Olimpíada Brasileira de Informática (OBI), onde a quantidade de alunos participantes do campus é considerado mínima. Nesse sentido, observa-se que há a necessidade de apoiar o GEMP em suas atividades para que novos alunos possam aderir ao projeto e se preparar para buscar bons resultados nas próximas competições relacionadas a programação. 
 
 Objetivos:
-Organizar a meia maratona de programação no campus Quixadá;
+Organizar a meia maratona de programação no campus Quixadá; lEtrAmento
 Criar um grupo de estudo para Olimpíada Brasileira de Informática;
 Incentivar e apoiar a participação de alunos tanto no Grupo de Estudo para Maratona de Programação (GEMP) como também na maratona de programação.
 
