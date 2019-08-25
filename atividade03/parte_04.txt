@@ -1,1 +1,1 @@
-grep -E -n '[A-Za-z0-9]{8}'
+grep -E -n '[A-Za-z]{9,}+' expressoesregulares.txt
