@@ -1,0 +1,3 @@
+grep -E 'Invalid user .+ from' ./auth.log | wc -l
+grep -E 'Invalid user .+ from' ./auth.log > malditos.txt
+grep -E 'Accepted publickey for joaovictor' ./auth.log| wc -l
