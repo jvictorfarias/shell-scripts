@@ -1,0 +1,2 @@
+cat /etc/passwd | rev | cut -f 1 -d '/' | rev | sort | uniq
+echo $(sed -E 's/[^0-9,]//g;1,2d;s/$/+/g;s/\,/\./g' ./despesas.txt | tr -d '\n' | sed '$a 0') | tr -d ' ' | bc

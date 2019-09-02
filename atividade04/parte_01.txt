@@ -1,0 +1,4 @@
+sed -i 's/python/python3/1' ./atividade04.py
+sed -i 's/\(nota1\|nota2\|notaFinal\)/\U\1/g' ./atividade04.py
+sed -i '1a import\ time' ./atividade04.py
+sed -i '$a print\(time\.ctime\(\)\)' ./atividade04.py
