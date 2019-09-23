@@ -1,0 +1,1 @@
+cat /etc/passwd | sed 's/\/home\/alunos/\/srv\/students/g' > passwd.new

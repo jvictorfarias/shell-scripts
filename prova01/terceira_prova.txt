@@ -1,0 +1,10 @@
+Aluno    | Nota 
+---------------
+João     | 9 
+Maria    | 8
+José     | 6
+Mateus   | 7 
+Paulo    | 5 
+Pedro    | 3
+Madalena | 10
+Abel     | 5

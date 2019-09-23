@@ -1,0 +1,1 @@
+ps aux | grep -E '^[^root]' | wc -l
