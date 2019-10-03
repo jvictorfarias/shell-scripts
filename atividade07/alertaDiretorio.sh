@@ -12,17 +12,17 @@ do
     NEW_COUNT=`ls -l $PATH_MONITOR | sed 1d | wc -l`;
     if [ ! -z "`comm -3 newDir.txt oldDir.txt`" ]
     then
-        newfiles=`comm -2 -3 newDir.txt oldDir.txt` #> dirSensors.log;
-        oldfiles=`comm -1 -3 newDir.txt oldDir.txt` #> dirSensors.log;
+        newfiles=`comm -2 -3 newDir.txt oldDir.txt`;
+        oldfiles=`comm -1 -3 newDir.txt oldDir.txt`;
         if [ $NEW_COUNT -gt $OLD_COUNT ]
         then
-            echo " `date` Alteração! $OLD_COUNT->$NEW_COUNT. Adicionados: $newfiles"
+            echo " [`date`] Alteração! $OLD_COUNT->$NEW_COUNT. Adicionados: `echo $newfiles | tr '\n' ' '`" >> dirSensors.log
         elif [ $NEW_COUNT -lt $OLD_COUNT ]
         then
-            echo " `date` Alteração! $OLD_COUNT->$NEW_COUNT. Removidos: $oldfiles"
+            echo " [`date`] Alteração! $OLD_COUNT->$NEW_COUNT. Removidos: `echo $oldfiles | tr '\n' ' '`" >> dirSensors.log
         else
-            echo " `date` Alteração! $OLD_COUNT->$NEW_COUNT. Adicionados: $newfiles"
-            echo " `date` Alteração! $OLD_COUNT->$NEW_COUNT. Removidos: $oldfiles"
+            echo " [`date`] Alteração! $OLD_COUNT->$NEW_COUNT. Adicionados: `echo $newfiles | tr '\n' ' '`" >> dirSensors.log
+            echo " [`date`] Alteração! $OLD_COUNT->$NEW_COUNT. Removidos:`echo $oldfiles | tr '\n' ' '`" >> dirSensors.log
             
         fi
     fi
