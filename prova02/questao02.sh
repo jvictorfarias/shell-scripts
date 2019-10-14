@@ -1,30 +1,30 @@
 #!/bin/bash
+
 bubbleSort(){
+    LENGTH=`expr $1 - 1`
+    shift 1
     ARRAY=($@)
-    echo "Ordenando BubbleSort..."
-    for ((i=0; i < ${#ARRAY[@]}; i++))
+    
+    echo "Ordenando por Bubble Sort..."
+    for ((i=$LENGTH; i > 0; i--))
     do
-        LESSER_INDEX=$i
-        LESSER_VALUE=${ARRAY[$i]}
-        
-        for ((j=$i; j < ${#ARRAY[@]}; j++))
+        for ((j=0; j < $i; j++))
         do
-            if [ ${ARRAY[$j]} -le $LESSER_VALUE ]
+            INCR=`expr $j + 1`
+            if [ ${ARRAY[$j]} -gt ${ARRAY[$INCR]} ]
             then
-                LESSER_VALUE=${ARRAY[$j]}
-                LESSER_INDEX=$j
-            else
-                continue
+                AUX=${ARRAY[$j]}
+                ARRAY[$j]=${ARRAY[$INCR]}
+                ARRAY[$INCR]=$AUX
             fi
+            
         done
-        
-        AUX=${ARRAY[$i]}
-        ARRAY[$i]=${ARRAY[$LESSER_INDEX]}
-        ARRAY[$LESSER_INDEX]=$AUX
-        
     done
-    echo "Vetor Ordenador: ${ARRAY[@]}"
+    
+    
+    echo "Vetor ordenado: ${ARRAY[@]}"
 }
+
 
 populate(){
     for ((i=0; i < $1; i++))
@@ -34,7 +34,7 @@ populate(){
     
     echo "Vetor Aleatório: ${UNSORTED[@]}"
     
-    bubbleSort ${UNSORTED[@]}
+    bubbleSort ${#UNSORTED[@]} ${UNSORTED[@]}
 }
 
 populate $1
