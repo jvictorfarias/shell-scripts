@@ -5,7 +5,14 @@ multTable(){
     tput setaf 1
     tput bold
     tput cup 0 3
-    seq -s "   " 1 $1
+    
+    COLUMN_HANDLER=3
+    for ((i=1; i <= $1; i++))
+    do
+        tput cup 0 $COLUMN_HANDLER
+        printf "%d" $i
+        COLUMN_HANDLER=`expr $COLUMN_HANDLER + 4`
+    done
     
     tput cup 1 0
     for ((i=1; i <= $1; i++))
