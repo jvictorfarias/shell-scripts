@@ -2,7 +2,7 @@
 
 multTable(){
     clear
-    tput setaf 4
+    tput setaf 1
     tput bold
     tput cup 0 3
     seq -s "   " 1 $1
