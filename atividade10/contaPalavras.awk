@@ -8,7 +8,7 @@
 
 END	{
   for (word in vector) {
-    printf word ":\t" vector[word] "\n" | "sort"
+    printf word ":\t" vector[word] "\n"
   }
 
   printf "Total de Palavras Analisadas: " counter "\n"
