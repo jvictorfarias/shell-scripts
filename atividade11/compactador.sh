@@ -9,9 +9,15 @@ gzipCompression(){
     dialog --msgbox "Files Compressed!" 0 0
 }
 
-#b2zipCompression(){
-#
-#}
+b2zipCompression(){
+    cd $1
+    FILE_NAME=$2
+    shift 2
+    LIST_OF_FILES=($@)
+    tar -cjf $FILE_NAME.tar.bz2 `echo ${LIST_OF_FILES[@]}`
+    clear
+    dialog --msgbox "Files Compressed!" 0 0
+}
 
 
 DIR_PATH=`dialog --inputbox --stdout \
@@ -20,7 +26,7 @@ DIR_PATH=`dialog --inputbox --stdout \
 clear
 
 COMMAND="dialog --stdout --checklist Select 0 0 0 "
-for LINHA in `ls "$DIR_PATH"`
+for LINHA in `ls -al "$DIR_PATH" | grep '^-' | cut -d ' ' -f 11`
 do
     COMMAND=`echo $COMMAND $LINHA \'File\' OFF`
 done
@@ -37,10 +43,11 @@ then
     if [ $COMPRESS_OPT -eq 1 ]
     then
         gzipCompression $DIR_PATH $COMPRESS_NAME ${LIST_OF_FILES[@]}
-        # else if [ $COMPRESS_OPT -eq 2 ]
-        #     b2zipCompression $DIR_PATH $LIST $COMPRESS_NAME
-        # else
-        #     dialog --msgbox "Operation canceled." 0 0
+    elif [ $COMPRESS_OPT -eq 2 ]
+    then
+        b2zipCompression $DIR_PATH $COMPRESS_NAME ${LIST_OF_FILES[@]}
+    else
+        dialog --msgbox "Operation canceled." 0 0
     fi
 else
     clear
