@@ -5,17 +5,15 @@ bubbleSort(){
     shift 1
     local -a ARRAY=($@)
     
-    INIT_BS=`date +%s`
     for ((i=$LENGTH; i > 0; i--))
     do
         for ((j=0; j < $i; j++))
         do
-            INCR=`expr $j + 1`
-            if [ ${ARRAY[$j]} -gt ${ARRAY[$INCR]} ]
+            if [ ${ARRAY[$j]} -gt ${ARRAY[$(($j + 1))]} ]
             then
                 AUX=${ARRAY[$j]}
-                ARRAY[$j]=${ARRAY[$INCR]}
-                ARRAY[$INCR]=$AUX
+                ARRAY[$j]=${ARRAY[$(($j + 1))]}
+                ARRAY[$(($j + 1))]=$AUX
             fi
             
         done
@@ -54,16 +52,17 @@ selectSort(){
     
 }
 
+
 quickSort(){
     
     local -a FIRST=$1
     local -a LAST=$2
     local -a i=$FIRST
-    local -a j=`expr $LAST - 1`
+    local -a j=$(($LAST - 1))
     
     
-    PIVOT_INDEX=`expr $FIRST + $LAST`
-    PIVOT_INDEX=`expr $PIVOT_INDEX / 2`
+    PIVOT_INDEX=$(($FIRST + $LAST))
+    PIVOT_INDEX=$(($PIVOT_INDEX / 2))
     PIVOT=${ARRAY[$PIVOT_INDEX]}
     
     while [ $i -le $j ]
@@ -89,7 +88,7 @@ quickSort(){
     done
     if [ $j -gt $FIRST ]
     then
-        quickSort $FIRST `expr $j + 1`
+        quickSort $FIRST $(($j + 1))
     fi
     
     if [ $i -lt $LAST ]
